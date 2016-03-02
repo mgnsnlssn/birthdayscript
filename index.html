@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>
+		IESG-Senior School birthday Script
+	</title>
+    <link rel="stylesheet" type="text/css" href="../style/infotv.css">
+</head>
+
+
+<body>
+<div align="center"><img src="images/birthday_cake.png" /></div>
+<div id="label">
+<script language="JavaScript">
+ 
+var arrBday = [
+['Kalle Kula','05/20/02'],
+['Alva Salva','12/13/02'],
+['Lotta Potta','09/21/61']
+];
+ 
+function displayBdayList(today){
+  var bday,strList='';
+   for (var i=0;i<arrBday.length;i++){
+    bday = new Date(arrBday[i][1]);
+    if (!isNaN(bday) && bday.getMonth()==today.getMonth() && bday.getDate()==today.getDate())
+                             strList+='- '+arrBday[i][0]+ " ("+(today.getFullYear()-bday.getFullYear())+") years<br>";
+  }
+  if (strList==''){ // No birthdays today
+   document.write("<h1><div align='left'>Happy Birthday:</h1>- NO BIRTHDAYS TODAY</div>")
+   } else if (strList!=''){ // Birthdays today
+   document.write("<div align='left'><h1>Happy Birthday!</h1><h2>"+strList+"</h2><h2>Get yourself a great day!</h2></div>")
+                             } 
+}
+displayBdayList(new Date());
+</script>
+</div>
+</body>
+</html>
